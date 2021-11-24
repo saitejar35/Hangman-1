@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>       HELLOOOOOO ENELIN! :)
 #include <string.h>      HELLOOOOOO SAI
 #include <stdlib.h>  // for call to rand() and srand()
 #include <time.h>   // for call to time() in srand(time(NULL))
