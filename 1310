@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>  // for call to rand() and srand()
+#include <time.h>   // for call to time() in srand(time(NULL))
+
+#define DEBUG 1  // 1-development mode, prints more info; 0 - user mode, prints less
+#define MAX_WRONG 6
+
+int play_session(int level);
+
+int main(){
+    int level;
+    char enter;
+    if (DEBUG == 1) {
+        srand(1);  // the same sequence of random numbers will be generated for each run
+    }
+    else {
+        srand(time(NULL));  // a different sequence of random numbers will be generated with each run
+    }
+
+    printf("Choose difficulty level (exit the game: 0, easy: 1, medium: 2, hard: 3): ");
+    scanf("%d", &level );
+    while (level!=0){
+        play_session(level);
+        printf("Choose difficulty level (exit the game: 0, easy: 1, medium: 2, hard: 3): ");
+        scanf("%d", &level);
+    }
+    printf("\nThank you for playing our game! Goodbye!");
+}
